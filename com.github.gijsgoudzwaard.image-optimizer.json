@@ -1,10 +1,10 @@
 {
     "app-id": "com.github.gijsgoudzwaard.image-optimizer",
     "base": "io.elementary.BaseApp",
-    "base-version": "juno-19.08",
+    "base-version": "juno-20.08",
     "runtime": "org.freedesktop.Platform",
     "sdk": "org.freedesktop.Sdk",
-    "runtime-version": "19.08",
+    "runtime-version": "20.08",
     "command": "com.github.gijsgoudzwaard.image-optimizer",
     "finish-args": [
         /* X11 + XShm */
@@ -14,6 +14,18 @@
         "--filesystem=home"
     ],
     "modules": [
+        {
+            "name": "vala",
+            "cleanup-platform": ["*"],
+            "config-opts": [
+                "--enable-vapigen", "--enable-unversioned"
+            ],
+            "sources": [{
+                "type": "archive",
+                "url": "http://download.gnome.org/sources/vala/0.40/vala-0.40.25.tar.xz",
+                "sha256": "870fc7af58bbcfc82de6d11a96308a7bec6c180484ec431ce5bee68c2653b7df"
+            }]
+        },
         {
             "name":"jpegoptim",
             "sources":[{
@@ -41,8 +53,8 @@
         "config-opts": ["--buildtype=release"],
         "sources": [{
             "type": "archive",
-            "url": "https://github.com/GijsGoudzwaard/Image-Optimizer/archive/0.1.16.tar.gz",
-            "sha256": "bbdf4c35791f2c25be650b2ee64a32b175e1a9bc70540e232fd4c80c9364bdc4"
+            "url": "https://github.com/GijsGoudzwaard/Image-Optimizer/archive/0.1.17.tar.gz",
+            "sha256": "41b7bbaa635fcee228a4fedd85c2a7a0095ca41fc9adcd80186bc3c3bf4de287"
         },
         {
             "type": "patch",
