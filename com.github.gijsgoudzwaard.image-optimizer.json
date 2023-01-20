@@ -1,10 +1,10 @@
 {
     "app-id": "com.github.gijsgoudzwaard.image-optimizer",
     "base": "io.elementary.BaseApp",
-    "base-version": "juno-20.08",
+    "base-version": "juno-22.08",
     "runtime": "org.freedesktop.Platform",
     "sdk": "org.freedesktop.Sdk",
-    "runtime-version": "20.08",
+    "runtime-version": "22.08",
     "command": "com.github.gijsgoudzwaard.image-optimizer",
     "finish-args": [
         /* X11 + XShm */
@@ -14,6 +14,15 @@
         "--filesystem=home"
     ],
     "modules": [
+        {
+            "name": "graphviz",
+            "cleanup-platform": ["/include", "/bin", "/share/graphviz"],
+            "sources": [{
+                "type": "archive",
+                "url": "https://graphviz.gitlab.io/pub/graphviz/stable/SOURCES/graphviz.tar.gz",
+                "sha256": "ca5218fade0204d59947126c38439f432853543b0818d9d728c589dfe7f3a421"
+            }]
+        },
         {
             "name": "vala",
             "cleanup-platform": ["*"],
