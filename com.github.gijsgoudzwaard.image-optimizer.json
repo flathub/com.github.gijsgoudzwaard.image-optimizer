@@ -51,8 +51,8 @@
         "config-opts": ["--buildtype=release"],
         "sources": [{
             "type": "archive",
-            "url": "https://github.com/GijsGoudzwaard/Image-Optimizer/archive/refs/tags/0.2.0.tar.gz",
-            "sha256": "d8533994f17eb0c9eb6279a6697f97f4adfe1fe4e3332a7d2afd3eb72e6d31aa"
+            "url": "https://github.com/GijsGoudzwaard/Image-Optimizer/archive/refs/tags/0.3.0.tar.gz",
+            "sha256": "d789ceea12a70c861010a34a95252bd03bdeccf73470c039949847dfb2a30026"
         },
         {
             "type": "patch",
@@ -60,8 +60,9 @@
         }],
         "post-install": [
             "mkdir -p /app/share/icons/hicolor/scalable/apps",
-            "mv /app/share/icons/hicolor/128x128@2/apps/${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
-            "find /app/share/icons/hicolor -type f -not -path \"*scalable*\" -not -path \"*actions*\" -name \"*.svg\" -delete"
+            "mv /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+            "find /app/share/icons/hicolor -type f -not -path \"*scalable*\" -not -path \"*actions*\" -name \"*.svg\" -delete",
+            "rm -f /app/share/icons/hicolor/icon-theme.cache"
         ]
     }]
 }
