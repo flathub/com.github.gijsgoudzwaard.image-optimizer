@@ -9,8 +9,7 @@
     "finish-args": [
         "--share=ipc",
         "--socket=fallback-x11",
-        "--socket=wayland",
-        "--filesystem=home"
+        "--socket=wayland"
     ],
     "cleanup": [
         "/bin/sassc",
@@ -51,8 +50,8 @@
         "config-opts": ["--buildtype=release"],
         "sources": [{
             "type": "archive",
-            "url": "https://github.com/GijsGoudzwaard/Image-Optimizer/archive/refs/tags/0.3.0.tar.gz",
-            "sha256": "d789ceea12a70c861010a34a95252bd03bdeccf73470c039949847dfb2a30026"
+            "url": "https://github.com/GijsGoudzwaard/Image-Optimizer/archive/refs/tags/0.4.0.tar.gz",
+            "sha256": "44cdf52e80924dbc3878565cf5aab6918f19f9e209b7042018e2333d7d602f9e"
         },
         {
             "type": "patch",
