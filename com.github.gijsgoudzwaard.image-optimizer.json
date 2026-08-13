@@ -9,7 +9,8 @@
     "finish-args": [
         "--share=ipc",
         "--socket=fallback-x11",
-        "--socket=wayland"
+        "--socket=wayland",
+        "--device=dri"
     ],
     "cleanup": [
         "/bin/sassc",
@@ -26,8 +27,8 @@
             "name":"jpegoptim",
             "sources":[{
                 "type": "archive",
-                "url": "https://github.com/tjko/jpegoptim/archive/v1.5.5.tar.gz",
-                "sha256": "90a309d1c092de358bb411d702281ac3039b489d03adb0bc3c4ef04cf0067d38"
+                "url": "https://github.com/tjko/jpegoptim/archive/v1.5.6.tar.gz",
+                "sha256": "661a808dfffa933d78c6beb47a2937d572b9f03e94cbaaab3d4c0d72f410e9be"
             }]
         },
         {
@@ -50,8 +51,8 @@
         "config-opts": ["--buildtype=release"],
         "sources": [{
             "type": "archive",
-            "url": "https://github.com/GijsGoudzwaard/Image-Optimizer/archive/refs/tags/0.4.0.tar.gz",
-            "sha256": "44cdf52e80924dbc3878565cf5aab6918f19f9e209b7042018e2333d7d602f9e"
+            "url": "https://github.com/GijsGoudzwaard/Image-Optimizer/archive/refs/tags/0.5.0.tar.gz",
+            "sha256": "37913b24ade2591fbbd7a6f0a348f5afb09e787e206542a94e1272cd0ba36b75"
         },
         {
             "type": "patch",
