@@ -51,8 +51,8 @@
         "config-opts": ["--buildtype=release"],
         "sources": [{
             "type": "archive",
-            "url": "https://github.com/GijsGoudzwaard/Image-Optimizer/archive/refs/tags/0.5.0.tar.gz",
-            "sha256": "37913b24ade2591fbbd7a6f0a348f5afb09e787e206542a94e1272cd0ba36b75"
+            "url": "https://github.com/GijsGoudzwaard/Image-Optimizer/archive/refs/tags/0.5.1.tar.gz",
+            "sha256": "754c35d13121f780976f745b8e1f4207880feab93240f9c113722fd957b3c525"
         },
         {
             "type": "patch",
