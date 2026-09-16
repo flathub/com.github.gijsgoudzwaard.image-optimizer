@@ -24,45 +24,45 @@
     ],
     "modules": [
         {
-            "name":"jpegoptim",
-            "sources":[{
-                "type": "archive",
-                "url": "https://github.com/tjko/jpegoptim/archive/v1.5.6.tar.gz",
-                "sha256": "661a808dfffa933d78c6beb47a2937d572b9f03e94cbaaab3d4c0d72f410e9be"
-            }]
+            "name": "ect",
+            "buildsystem": "cmake-ninja",
+            "subdir": "src",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/fhanau/Efficient-Compression-Tool.git",
+                    "tag": "v0.9.5",
+                    "commit": "9aabc23d73899ae55c1de292592fed6eb6217f66"
+                }
+            ]
         },
         {
-            "name": "optipng",
-            "build-options": {
-                "config-opts": [
-                    "--with-system-libs"
-                ]
-            },
-            "sources":[{
-                "type": "archive",
-                "url": "https://sourceforge.net/projects/optipng/files/OptiPNG/optipng-7.9.1/optipng-7.9.1.tar.gz/download",
-                "sha256":"c2579be58c2c66dae9d63154edcb3d427fef64cb00ec0aff079c9d156ec46f29",
-                "dest-filename": "optipng.tar.gz"
-            }]
-        },
-        {
-        "name": "image-optimizer",
-        "buildsystem": "meson",
-        "config-opts": ["--buildtype=release"],
-        "sources": [{
-            "type": "archive",
-            "url": "https://github.com/GijsGoudzwaard/Image-Optimizer/archive/refs/tags/0.5.1.tar.gz",
-            "sha256": "754c35d13121f780976f745b8e1f4207880feab93240f9c113722fd957b3c525"
-        },
-        {
-            "type": "patch",
-            "path": "elementary-theme.patch"  
-        }],
-        "post-install": [
-            "mkdir -p /app/share/icons/hicolor/scalable/apps",
-            "mv /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
-            "find /app/share/icons/hicolor -type f -not -path \"*scalable*\" -not -path \"*actions*\" -name \"*.svg\" -delete",
-            "rm -f /app/share/icons/hicolor/icon-theme.cache"
-        ]
-    }]
+            "name": "image-optimizer",
+            "buildsystem": "meson",
+            "config-opts": [
+                "--buildtype=release"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/GijsGoudzwaard/Image-Optimizer/archive/refs/tags/0.6.0.tar.gz",
+                    "sha256": "6c0ca0160b4c1235ba2b906e3fb295b058d48b3710023f84de5c0808acd18c76"
+                },
+                {
+                    "type": "patch",
+                    "path": "elementary-theme.patch"
+                }
+            ],
+            "post-install": [
+                "mkdir -p /app/share/icons/hicolor/scalable/apps",
+                "mv /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+                "find /app/share/icons/hicolor -type f -not -path \"*scalable*\" -not -path \"*actions*\" -name \"*.svg\" -delete",
+                "rm -f /app/share/icons/hicolor/icon-theme.cache"
+            ]
+        }
+    ]
 }
